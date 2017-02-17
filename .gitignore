@@ -1,0 +1,13 @@
+data/
+node_modules/
+.idea/
+output.json
+queries/*.json
+*.json
+*.sql
+queries/*.sql
+queries/asthma
+queries/diabetes
+queries/epilepsy
+queries/hypertension
+queries/node_modules
