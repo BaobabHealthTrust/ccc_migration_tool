@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "async": "^2.1.4",
+    "knex": "^0.12.6",
+    "mysql": "^2.13.0",
+    "node-rest-client": "^2.5.0"
+  }
+}
