@@ -3,7 +3,7 @@
 var fs = require("fs");
 var path = require("path");
 var client = require("node-rest-client").Client;
-var config = require(path.resolve("./database.json"));
+var config = require(path.resolve("./couchdb.json"));
 
 Array.prototype.diff = function (a) {
     return this.filter(function (i) {

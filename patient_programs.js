@@ -5,7 +5,7 @@
 // process.stdin.resume();
 
 var client = require("node-rest-client").Client;
-var config = require(path.resolve("./database.json"));
+var config = require(path.resolve("./couchdb.json"));
 
 var knownEncounters = [
     "COMPLICATIONS",
