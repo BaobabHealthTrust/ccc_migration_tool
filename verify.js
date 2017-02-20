@@ -3,6 +3,7 @@
 var fs = require("fs");
 var path = require("path");
 var client = require("node-rest-client").Client;
+var config = require(path.resolve("./database.json"));
 
 Array.prototype.diff = function (a) {
     return this.filter(function (i) {
@@ -43,7 +44,7 @@ function fetchInitialElements(callback) {
 
     var result = [];
 
-    (new client()).get("http://localhost:5984/ccc/_design/Person/_view/all_chronic_care_program?key=%22CHRONIC+CARE+" +
+    (new client()).get("http://localhost:5984/" + config.database + "/_design/Person/_view/all_chronic_care_program?key=%22CHRONIC+CARE+" +
         "PROGRAM%22&include_docs=true&reduce=false", function (data) {
 
         var json = JSON.parse(data);

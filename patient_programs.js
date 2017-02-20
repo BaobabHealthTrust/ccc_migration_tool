@@ -5,6 +5,7 @@
 // process.stdin.resume();
 
 var client = require("node-rest-client").Client;
+var config = require(path.resolve("./database.json"));
 
 var knownEncounters = [
     "COMPLICATIONS",
@@ -93,12 +94,12 @@ if (fs.existsSync("./asthma")) {
 
 }
 
-(new client()).get("http://localhost:5984/ccc/_design/Person/_view/obs_encounters_only?keys=" +
+(new client()).get("http://localhost:5984/" + config.database + "/_design/Person/_view/obs_encounters_only?keys=" +
     encodeURIComponent(JSON.stringify(knownEncounters)) + "&include_docs=true&reduce=false", function (data) {
 
     var json = JSON.parse(data);
 
-    (new client()).get("http://localhost:5984/ccc/_design/Person/_view/all_chronic_care_program?include_docs=true&reduce=" +
+    (new client()).get("http://localhost:5984/" + config.database + "/_design/Person/_view/all_chronic_care_program?include_docs=true&reduce=" +
         "false&key=%22CHRONIC CARE PROGRAM%22", function (res) {
 
         var programsData = JSON.parse(res);
