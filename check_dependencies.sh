@@ -28,6 +28,8 @@ if [ ${#COUCHDB} == 0 ]; then
 
     sudo apt-get install couchdb -y;
 
+    clear
+
     read -p "Enter CouchDB database usename: " COUCHDB_DATABASE_USERNAME
 
     echo -n "Enter CouchDB database password for '$COUCHDB_DATABASE_USERNAME': "
