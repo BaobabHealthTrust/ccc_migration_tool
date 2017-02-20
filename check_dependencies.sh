@@ -36,7 +36,7 @@ if [ ${#COUCHDB} == 0 ]; then
 
     read -s COUCHDB_DATABASE_PASSWORD
 
-    curl -X PUT -H 'Content-Type: application/json' --data $COUCHDB_DATABASE_PASSWORD "http://localhost:5984/_config/admins/$COUCHDB_DATABASE_USERNAME"
+    curl -X PUT -H 'Content-Type: application/json' --data "\"$COUCHDB_DATABASE_PASSWORD\"" "http://localhost:5984/_config/admins/$COUCHDB_DATABASE_USERNAME"
 
     sudo sed -i 's/;port = 5984/port = 5984/g' /etc/couchdb/local.ini
 
