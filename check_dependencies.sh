@@ -24,6 +24,8 @@ if [ ${#COUCHDB} == 0 ]; then
 
     sudo apt-get remove couchdb couchdb-bin couchdb-common -yf;
 
+    sudo apt-get autoremove -yf;
+
     sudo apt-get install couchdb -y;
 
     read -p "Enter CouchDB database usename: " COUCHDB_DATABASE_USERNAME
