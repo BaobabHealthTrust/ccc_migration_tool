@@ -4,6 +4,7 @@
 
 // process.stdin.resume();
 
+var path = require("path");
 var client = require("node-rest-client").Client;
 var config = require(path.resolve("./couchdb.json"));
 
